@@ -21,8 +21,8 @@ const LazyNotFound = React.lazy(() => import("./pages/NotFound"));
 
 // Loading component for Suspense fallback
 const PageLoader = () => (
-  <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-zinc-50 flex items-center justify-center">
-    <LoadingSpinner size="lg" text="Loading page..." />
+  <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 flex items-center justify-center">
+    <LoadingSpinner size="lg" text="Loading Mangrove Watch..." />
   </div>
 );
 

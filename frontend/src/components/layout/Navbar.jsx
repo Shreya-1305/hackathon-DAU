@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaHome, FaBars, FaTimes, FaSun, FaMoon, FaSignInAlt } from "react-icons/fa";
+import { FaHome, FaBars, FaTimes, FaSun, FaMoon, FaSignInAlt, FaTree, FaMapMarkedAlt, FaChartLine, FaUsers, FaLeaf } from "react-icons/fa";
 import { useAppContext } from "../../context/AppContext";
 import { useAuth } from "../../context/AuthContext";
 import UserProfile from "../common/UserProfile";
@@ -11,7 +11,14 @@ const Navbar = () => {
   const { theme, toggleTheme } = useAppContext();
   const { isAuthenticated } = useAuth();
 
-  const navigation = [{ name: "Home", href: "/", icon: FaHome }];
+  const navigation = [
+    { name: "Home", href: "/", icon: FaHome },
+    { name: "Report Incident", href: "/report", icon: FaMapMarkedAlt },
+    { name: "Restoration", href: "/restoration", icon: FaTree },
+    { name: "Carbon Credits", href: "/carbon-credits", icon: FaLeaf },
+    { name: "Community", href: "/community", icon: FaUsers },
+    { name: "Analytics", href: "/analytics", icon: FaChartLine },
+  ];
 
   const isActive = (path) => location.pathname === path;
 
@@ -22,17 +29,17 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">H</span>
+              <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
+                <FaTree className="text-white w-4 h-4" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                Hackathon
+              <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                Mangrove Watch
               </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => {
               const Icon = item.icon;
               return (
@@ -41,8 +48,8 @@ const Navbar = () => {
                   to={item.href}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive(item.href)
-                      ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg"
-                      : "text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
+                      ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg"
+                      : "text-gray-700 hover:text-green-600 hover:bg-green-50"
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -54,7 +61,7 @@ const Navbar = () => {
             {/* Dark/Light Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors"
+              className="p-2 rounded-lg text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (
@@ -70,10 +77,10 @@ const Navbar = () => {
             ) : (
               <Link
                 to="/login"
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-700 hover:to-teal-700 transition-all duration-200"
+                className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 transition-all duration-200"
               >
                 <FaSignInAlt className="h-4 w-4" />
-                <span>Login</span>
+                <span>Join Community</span>
               </Link>
             )}
           </div>
@@ -83,7 +90,7 @@ const Navbar = () => {
             {/* Dark/Light Toggle for mobile */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors"
+              className="p-2 rounded-lg text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (
@@ -95,7 +102,7 @@ const Navbar = () => {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors"
+              className="p-2 rounded-lg text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors"
             >
               {isMobileMenuOpen ? (
                 <FaTimes className="w-5 h-5" />
@@ -119,8 +126,8 @@ const Navbar = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       isActive(item.href)
-                        ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white"
-                        : "text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
+                        ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white"
+                        : "text-gray-700 hover:text-green-600 hover:bg-green-50"
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -138,10 +145,10 @@ const Navbar = () => {
                 <Link
                   to="/login"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-700 hover:to-teal-700 transition-all duration-200"
+                  className="flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 transition-all duration-200"
                 >
                   <FaSignInAlt className="w-4 h-4" />
-                  <span>Login</span>
+                  <span>Join Community</span>
                 </Link>
               )}
             </div>

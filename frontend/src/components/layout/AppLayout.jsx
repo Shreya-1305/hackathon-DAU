@@ -12,7 +12,7 @@ const AppLayout = () => {
       className={`min-h-screen flex flex-col ${
         theme === "dark"
           ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white"
-          : "bg-gradient-to-br from-slate-50 via-white to-zinc-50"
+          : "bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50"
       }`}
     >
       {/* Navbar */}

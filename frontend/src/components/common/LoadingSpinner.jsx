@@ -12,11 +12,11 @@ const LoadingSpinner = ({ size = "md", text = "Loading..." }) => {
     <div className="flex flex-col items-center justify-center space-y-4">
       <div className="relative">
         <div
-          className={`${sizeClasses[size]} border-4 border-gray-200 border-t-emerald-600 rounded-full animate-spin`}
+          className={`${sizeClasses[size]} mangrove-spinner`}
         ></div>
       </div>
       {text && (
-        <p className="text-gray-600 font-medium animate-pulse">{text}</p>
+        <p className="text-green-600 font-medium mangrove-pulse">{text}</p>
       )}
     </div>
   );

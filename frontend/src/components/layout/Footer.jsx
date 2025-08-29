@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaHeart, FaTree, FaGlobe, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { useAppContext } from "../../context/AppContext";
 
 const Footer = () => {
@@ -19,11 +19,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">H</span>
+              <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
+                <FaTree className="text-white w-4 h-4" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                Hackathon
+              <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                Community Mangrove Watch
               </span>
             </div>
             <p
@@ -31,16 +31,16 @@ const Footer = () => {
                 theme === "dark" ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              A modern, professional React application built with cutting-edge
-              technologies and beautiful design principles.
+              Empowering coastal communities to protect and restore mangrove ecosystems through participatory monitoring, 
+              AI-powered verification, and carbon credit rewards. Join the global movement to safeguard our planet's vital coastal forests.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
                 className={`${
                   theme === "dark"
-                    ? "text-gray-400 hover:text-emerald-400"
-                    : "text-gray-400 hover:text-emerald-600"
+                    ? "text-gray-400 hover:text-green-400"
+                    : "text-gray-400 hover:text-green-600"
                 } transition-colors`}
                 aria-label="GitHub"
               >
@@ -50,8 +50,8 @@ const Footer = () => {
                 href="#"
                 className={`${
                   theme === "dark"
-                    ? "text-gray-400 hover:text-emerald-400"
-                    : "text-gray-400 hover:text-emerald-600"
+                    ? "text-gray-400 hover:text-green-400"
+                    : "text-gray-400 hover:text-green-600"
                 } transition-colors`}
                 aria-label="LinkedIn"
               >
@@ -61,8 +61,8 @@ const Footer = () => {
                 href="#"
                 className={`${
                   theme === "dark"
-                    ? "text-gray-400 hover:text-emerald-400"
-                    : "text-gray-400 hover:text-emerald-600"
+                    ? "text-gray-400 hover:text-green-400"
+                    : "text-gray-400 hover:text-green-600"
                 } transition-colors`}
                 aria-label="Twitter"
               >
@@ -78,19 +78,67 @@ const Footer = () => {
                 theme === "dark" ? "text-white" : "text-gray-800"
               }`}
             >
-              Quick Links
+              Platform Features
             </h3>
             <ul className="space-y-2">
               <li>
                 <a
-                  href="/"
+                  href="/report"
                   className={`${
                     theme === "dark"
-                      ? "text-gray-300 hover:text-emerald-400"
-                      : "text-gray-600 hover:text-emerald-600"
+                      ? "text-gray-300 hover:text-green-400"
+                      : "text-gray-600 hover:text-green-600"
                   } transition-colors`}
                 >
-                  Home
+                  Report Incident
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/restoration"
+                  className={`${
+                    theme === "dark"
+                      ? "text-gray-300 hover:text-green-400"
+                      : "text-gray-600 hover:text-green-600"
+                  } transition-colors`}
+                >
+                  Mangrove Restoration
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/carbon-credits"
+                  className={`${
+                    theme === "dark"
+                      ? "text-gray-300 hover:text-green-400"
+                      : "text-gray-600 hover:text-green-600"
+                  } transition-colors`}
+                >
+                  Carbon Credits
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/community"
+                  className={`${
+                    theme === "dark"
+                      ? "text-gray-300 hover:text-green-400"
+                      : "text-gray-600 hover:text-green-600"
+                  } transition-colors`}
+                >
+                  Community Hub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/analytics"
+                  className={`${
+                    theme === "dark"
+                      ? "text-gray-300 hover:text-green-400"
+                      : "text-gray-600 hover:text-green-600"
+                  } transition-colors`}
+                >
+                  Impact Analytics
                 </a>
               </li>
             </ul>
@@ -103,16 +151,29 @@ const Footer = () => {
                 theme === "dark" ? "text-white" : "text-gray-800"
               }`}
             >
-              Contact
+              Contact Us
             </h3>
             <ul
-              className={`space-y-2 ${
+              className={`space-y-3 ${
                 theme === "dark" ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              <li>hello@hackathon.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>San Francisco, CA</li>
+              <li className="flex items-center space-x-2">
+                <FaEnvelope className="w-4 h-4 text-green-600" />
+                <span>hello@mangrovewatch.org</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <FaPhone className="w-4 h-4 text-green-600" />
+                <span>+1 (555) 123-4567</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <FaMapMarkerAlt className="w-4 h-4 text-green-600" />
+                <span>Global Conservation Network</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <FaGlobe className="w-4 h-4 text-green-600" />
+                <span>www.mangrovewatch.org</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -129,7 +190,8 @@ const Footer = () => {
                 theme === "dark" ? "text-gray-400" : "text-gray-600"
               }`}
             >
-              &copy; {currentYear} Hackathon Project. All rights reserved.
+              &copy; {currentYear} Community Mangrove Watch. All rights reserved. 
+              <span className="ml-2">Protecting our coastal ecosystems together.</span>
             </p>
             <p
               className={`text-sm flex items-center space-x-1 mt-2 md:mt-0 ${
@@ -138,7 +200,7 @@ const Footer = () => {
             >
               <span>Built with</span>
               <FaHeart className="w-4 h-4 text-red-500" />
-              <span>using React & Vite</span>
+              <span>for the planet</span>
             </p>
           </div>
         </div>
