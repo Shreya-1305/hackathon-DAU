@@ -84,10 +84,19 @@ const router = createBrowserRouter([
     element: (
       <>
         <ScrollToTop />
-        <LazyNotFound />
+        <AppProvider>
+          <AuthProvider>
+            <ErrorBoundary FallbackComponent={ErrorFallback}>
+              <Suspense fallback={<PageLoader />}>
+                <LazyNotFound />
+              </Suspense>
+            </ErrorBoundary>
+          </AuthProvider>
+        </AppProvider>
       </>
     ),
   },
+  
 ]);
 
 function App() {
