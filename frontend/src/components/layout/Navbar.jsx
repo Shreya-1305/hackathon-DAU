@@ -12,6 +12,7 @@ import {
   FaChartLine,
   FaUsers,
   FaLeaf,
+  FaMedal,
 } from "react-icons/fa";
 import { useAppContext } from "../../context/AppContext";
 import { useAuth } from "../../context/AuthContext";
@@ -27,7 +28,7 @@ const Navbar = () => {
     { name: "Report Incident", href: "/report", icon: FaMapMarkedAlt },
     { name: "Restoration", href: "/restoration", icon: FaTree },
     { name: "Carbon Credits", href: "/carbon-credits", icon: FaLeaf },
-    { name: "Community", href: "/community", icon: FaUsers },
+    { name: "Leaderboard", href: "/leaderboard", icon: FaMedal },
     { name: "Analytics", href: "/analytics", icon: FaChartLine },
   ];
 
@@ -40,9 +41,10 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              {/* <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
-                <FaTree className="text-white w-4 h-4" />
-              </div> */}
+              <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
+                <FaLeaf className="text-white w-4 h-4" />{" "}
+                {/* ✅ consistent size + color */}
+              </div>
               <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                 MARC
               </span>

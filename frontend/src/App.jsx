@@ -19,6 +19,8 @@ const LazyHome = React.lazy(() => import("./pages/Home"));
 const LazyLogin = React.lazy(() => import("./pages/Login"));
 const LazyNotFound = React.lazy(() => import("./pages/NotFound"));
 
+const Leaderboard = React.lazy(() => import("./pages/Leaderboard"));
+
 // Loading component for Suspense fallback
 const PageLoader = () => (
   <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 flex items-center justify-center">
@@ -58,6 +60,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <LazyHome />,
       },
+      {
+        path: "/leaderboard",
+        element: <Leaderboard />,
+      },
     ],
   },
   {
@@ -96,7 +102,6 @@ const router = createBrowserRouter([
       </>
     ),
   },
-  
 ]);
 
 function App() {
