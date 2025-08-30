@@ -72,7 +72,7 @@ const Navbar = () => {
             })}
 
             {/* Dark/Light Toggle */}
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-lg text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors"
               aria-label="Toggle theme"
@@ -82,7 +82,7 @@ const Navbar = () => {
               ) : (
                 <FaMoon className="w-5 h-5" />
               )}
-            </button>
+            </button> */}
 
             {/* Auth Section */}
             {isAuthenticated ? (
