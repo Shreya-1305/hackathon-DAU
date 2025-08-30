@@ -131,38 +131,48 @@ const Home = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-green-900/20 dark:via-emerald-900/20 dark:to-teal-900/20"></div>
-        <div className="relative text-center space-y-8 py-20">
-          <div className="flex justify-center space-x-2 mb-6">
-            <FaTree className="w-8 h-8 text-green-600" />
-            <FaWater className="w-8 h-8 text-blue-600" />
-            <FaLeaf className="w-8 h-8 text-emerald-600" />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
-            Community Mangrove Watch
-          </h1>
-          <p className={`text-xl max-w-4xl mx-auto leading-relaxed ${
-            theme === "dark" ? "text-gray-300" : "text-gray-700"
-          }`}>
-            Empowering coastal communities to protect and restore mangrove ecosystems through participatory monitoring, 
-            AI-powered verification, and carbon credit rewards. Join the global movement to safeguard our planet's vital coastal forests.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-10">
-            <Link
-              to="/login"
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <FaUsers className="w-5 h-5" />
-              <span>Join the Community</span>
-            </Link>
-            <button className="inline-flex items-center space-x-2 border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-600 hover:text-white transition-all duration-300">
-              <FaPlay className="w-5 h-5" />
-              <span>Watch Demo</span>
-            </button>
-          </div>
-        </div>
+      {/* Hero Section */}
+<div className="relative overflow-hidden bg-[url('./Hero-bg.jpg')] bg-cover bg-center bg-no-repeat ">
+  <div className="relative backdrop-blur-md">
+    {/* White overlay */}
+    <div className="absolute inset-0 bg-white/70"></div>
+
+    {/* Optional gradient overlay on top of white */}
+    <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-green-900/20 dark:via-emerald-900/20 dark:to-teal-900/20"></div>
+
+    {/* Content */}
+    <div className="relative text-center space-y-8 py-20">
+      <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+        MARC
+      </h1>
+      <p
+        className={`text-2xl max-w-4xl mx-auto leading-relaxed font-bold text-[#114924] ${
+          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+        }`}
+      >
+        Mangrove Action for Restoration And Conservation
+      </p>
+      <p
+        className={`text-xl max-w-4xl mx-auto leading-relaxed ${
+          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+        }`}
+      >
+        Empowering coastal communities to protect and restore mangrove ecosystems through participatory monitoring, 
+        AI-powered verification, and carbon credit rewards. Join the global movement to safeguard our planet's vital coastal forests.
+      </p>
+      <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-10">
+        <Link
+          to="/login"
+          className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          <FaUsers className="w-5 h-5" />
+          <span>Join the Community</span>
+        </Link>
       </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Stats Section */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
