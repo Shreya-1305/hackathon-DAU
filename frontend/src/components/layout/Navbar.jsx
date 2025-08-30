@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaHome, FaBars, FaTimes, FaSun, FaMoon, FaSignInAlt, FaTree, FaMapMarkedAlt, FaChartLine, FaUsers, FaLeaf } from "react-icons/fa";
+import {
+  FaHome,
+  FaBars,
+  FaTimes,
+  FaSun,
+  FaMoon,
+  FaSignInAlt,
+  FaTree,
+  FaMapMarkedAlt,
+  FaChartLine,
+  FaUsers,
+  FaLeaf,
+} from "react-icons/fa";
 import { useAppContext } from "../../context/AppContext";
 import { useAuth } from "../../context/AuthContext";
 import UserProfile from "../common/UserProfile";
@@ -134,7 +146,7 @@ const Navbar = () => {
                   </Link>
                 );
               })}
-              
+
               {/* Mobile Auth Section */}
               {isAuthenticated ? (
                 <div className="pt-2 border-t border-gray-200">
