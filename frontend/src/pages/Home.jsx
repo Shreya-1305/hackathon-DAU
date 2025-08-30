@@ -11,17 +11,13 @@ import {
   FaGlobe,
   FaCamera,
   FaAward,
- 
-  FaWater,
-
-  FaArrowRight,
-  FaPlay,
   FaStar,
   FaHeart,
 } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import MarcLogoHero from "../components/MarcLogoHero";
 
 const Home = () => {
   const { theme } = useAppContext();
@@ -62,7 +58,7 @@ const Home = () => {
     {
       icon: FaAward,
       title: "Gamification Rewards",
-      description: "Earn points, badges, and rewards based on your conservation impact and carbon credits saved.",
+      description: "Earn points, and rewards based on your conservation impact and carbon credits saved.",
       color: "from-yellow-500 to-orange-600",
     },
     {
@@ -131,18 +127,16 @@ const Home = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      {/* Hero Section */}
-<div className="relative overflow-hidden bg-[url('./Hero-bg.jpg')] bg-cover bg-center bg-no-repeat ">
-  <div className="relative backdrop-blur-md">
-    {/* White overlay */}
-    <div className="absolute inset-0 bg-white/70"></div>
 
-    {/* Optional gradient overlay on top of white */}
+{/* <div className="relative w-full h-[83vh] overflow-hidden bg-[url('./Hero-bg-2.avif')] bg-cover bg-center bg-no-repeat">
+  <div className="relative backdrop-blur-sm h-full">
+
+    <div className="absolute inset-0 bg-white/75"></div>
+
     <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-green-900/20 dark:via-emerald-900/20 dark:to-teal-900/20"></div>
 
-    {/* Content */}
-    <div className="relative text-center space-y-8 py-20">
-      <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+    <div className="relative text-center space-y-8 pt-32">
+      <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent pb-4">
         MARC
       </h1>
       <p
@@ -153,7 +147,7 @@ const Home = () => {
         Mangrove Action for Restoration And Conservation
       </p>
       <p
-        className={`text-xl max-w-4xl mx-auto leading-relaxed ${
+        className={`text-xl pb-4 max-w-4xl mx-auto leading-relaxed text-[#114924] ${
           theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
         }`}
       >
@@ -171,11 +165,12 @@ const Home = () => {
       </div>
     </div>
   </div>
-</div>
+</div> */}
 
+      <MarcLogoHero />
 
       {/* Stats Section */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (
@@ -197,10 +192,10 @@ const Home = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
 
       {/* Features Section */}
-      <div className="space-y-12">
+      <div className="space-y-12 px-16">
         <div className="text-center">
           <h2 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4">
             Platform Features
@@ -243,7 +238,7 @@ const Home = () => {
       </div>
 
       {/* Impact Section */}
-      <div className={`${
+      {/* <div className={`${
         theme === "dark" ? "bg-gray-800/40" : "bg-green-50"
       } rounded-2xl p-8`}>
         <div className="text-center mb-8">
@@ -279,10 +274,10 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Recent Reports Section */}
-      <div className="space-y-8">
+      <div className="space-y-8 px-16">
         <div className="text-center">
           <h2 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4">
             Recent Community Reports
@@ -339,7 +334,7 @@ const Home = () => {
       {/* Testimonials Section */}
       <div className={`${
         theme === "dark" ? "bg-gray-800/40" : "bg-emerald-50"
-      } rounded-2xl p-8`}>
+      } rounded-2xl p-8 px-16`}>
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4">
             Community Voices
@@ -390,7 +385,7 @@ const Home = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 rounded-2xl p-12 text-center text-white relative overflow-hidden">
+      <div className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 rounded-2xl p-12 text-center text-white relative overflow-hidden mx-20">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative">
           <div className="flex justify-center space-x-4 mb-6">
@@ -413,10 +408,10 @@ const Home = () => {
               <FaUsers className="w-5 h-5" />
               <span>Get Started Now</span>
             </Link>
-            <button className="inline-flex items-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-all duration-200">
+            {/* <button className="inline-flex items-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-all duration-200">
               <FaPlay className="w-5 h-5" />
               <span>Learn More</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

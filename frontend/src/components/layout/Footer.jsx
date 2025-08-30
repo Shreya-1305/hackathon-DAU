@@ -46,28 +46,6 @@ const Footer = () => {
               >
                 <FaGithub className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className={`${
-                  theme === "dark"
-                    ? "text-gray-400 hover:text-green-400"
-                    : "text-gray-400 hover:text-green-600"
-                } transition-colors`}
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className={`${
-                  theme === "dark"
-                    ? "text-gray-400 hover:text-green-400"
-                    : "text-gray-400 hover:text-green-600"
-                } transition-colors`}
-                aria-label="Twitter"
-              >
-                <FaTwitter className="w-5 h-5" />
-              </a>
             </div>
           </div>
 

@@ -40,9 +40,9 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              {/* <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
                 <FaTree className="text-white w-4 h-4" />
-              </div> */}
+              </div>
               <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                 MARC
               </span>
@@ -70,7 +70,7 @@ const Navbar = () => {
             })}
 
             {/* Dark/Light Toggle */}
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-lg text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors"
               aria-label="Toggle theme"
@@ -80,7 +80,7 @@ const Navbar = () => {
               ) : (
                 <FaMoon className="w-5 h-5" />
               )}
-            </button>
+            </button> */}
 
             {/* Auth Section */}
             {isAuthenticated ? (
