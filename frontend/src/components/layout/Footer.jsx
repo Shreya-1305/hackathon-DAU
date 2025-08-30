@@ -176,9 +176,6 @@ const Footer = () => {
                 theme === "dark" ? "text-gray-400" : "text-gray-600"
               }`}
             >
-              <span>Built with</span>
-              <FaHeart className="w-4 h-4 text-red-500" />
-              <span>for the planet</span>
             </p>
           </div>
         </div>

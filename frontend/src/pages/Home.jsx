@@ -13,6 +13,12 @@ import {
   FaAward,
   FaStar,
   FaHeart,
+  FaWater,
+  FaRecycle,
+  FaThermometerHalf,
+  FaSeedling,
+  FaFish,
+  FaShip,
 } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
 import { useAuth } from "../context/AuthContext";
@@ -67,6 +73,37 @@ const Home = () => {
       description: "Monitor your contribution to global mangrove conservation and climate change mitigation.",
       color: "from-purple-500 to-indigo-600",
     },
+  ];
+
+  const blueCarbonCards = [
+    {
+      icon: FaWater,
+      title: "What is Blue Carbon?",
+      description: "Blue carbon refers to carbon dioxide captured and stored by coastal and marine ecosystems, particularly mangroves, seagrasses, and salt marshes. These ecosystems are incredibly efficient at sequestering carbon from the atmosphere.",
+      color: "from-blue-500 to-cyan-600",
+      fact: "Mangroves can store up to 4x more carbon than terrestrial forests"
+    },
+    {
+      icon: FaThermometerHalf,
+      title: "Climate Change Impact",
+      description: "Blue carbon ecosystems play a crucial role in mitigating climate change by absorbing and storing atmospheric CO2. When these ecosystems are destroyed, they release stored carbon back into the atmosphere, accelerating global warming.",
+      color: "from-red-500 to-orange-600",
+      fact: "Coastal ecosystems store 50% of ocean carbon despite covering only 2% of ocean area"
+    },
+    {
+      icon: FaRecycle,
+      title: "Carbon Sequestration",
+      description: "Mangroves are among the most carbon-rich ecosystems on Earth. They store carbon in their biomass, roots, and especially in the soil beneath them, where it can remain for thousands of years if undisturbed.",
+      color: "from-green-500 to-emerald-600",
+      fact: "1 hectare of mangrove can sequester 3-5 tons of CO2 annually"
+    },
+    {
+      icon: FaFish,
+      title: "Biodiversity & Livelihoods",
+      description: "Beyond carbon storage, mangrove ecosystems provide critical habitat for marine life, protect coastlines from storms, and support millions of people who depend on them for food, shelter, and income.",
+      color: "from-purple-500 to-indigo-600",
+      fact: "Mangroves support 75% of commercially caught fish species"
+    }
   ];
 
   const impactData = [
@@ -127,47 +164,60 @@ const Home = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-
-{/* <div className="relative w-full h-[83vh] overflow-hidden bg-[url('./Hero-bg-2.avif')] bg-cover bg-center bg-no-repeat">
-  <div className="relative backdrop-blur-sm h-full">
-
-    <div className="absolute inset-0 bg-white/75"></div>
-
-    <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-green-900/20 dark:via-emerald-900/20 dark:to-teal-900/20"></div>
-
-    <div className="relative text-center space-y-8 pt-32">
-      <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent pb-4">
-        MARC
-      </h1>
-      <p
-        className={`text-2xl max-w-4xl mx-auto leading-relaxed font-bold text-[#114924] ${
-          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-        }`}
-      >
-        Mangrove Action for Restoration And Conservation
-      </p>
-      <p
-        className={`text-xl pb-4 max-w-4xl mx-auto leading-relaxed text-[#114924] ${
-          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-        }`}
-      >
-        Empowering coastal communities to protect and restore mangrove ecosystems through participatory monitoring, 
-        AI-powered verification, and carbon credit rewards. Join the global movement to safeguard our planet's vital coastal forests.
-      </p>
-      <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-10">
-        <Link
-          to="/login"
-          className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-        >
-          <FaUsers className="w-5 h-5" />
-          <span>Join the Community</span>
-        </Link>
-      </div>
-    </div>
-  </div>
-</div> */}
-
       <MarcLogoHero />
+
+      {/* Blue Carbon Education Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">
+            Understanding Blue Carbon
+          </h2>
+          <p className={`text-xl max-w-3xl mx-auto ${
+            theme === "dark" ? "text-gray-300" : "text-gray-600"
+          }`}>
+            Discover why coastal ecosystems are crucial in the fight against climate change
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {blueCarbonCards.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <div
+                key={index}
+                className={`${
+                  theme === "dark"
+                    ? "bg-gray-800/60 backdrop-blur-sm border-gray-700"
+                    : "bg-white/60 backdrop-blur-sm border-gray-200"
+                } rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border group`}
+              >
+                <div className={`w-16 h-16 bg-gradient-to-r ${card.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className={`text-2xl font-bold mb-4 ${
+                  theme === "dark" ? "text-white" : "text-gray-800"
+                }`}>
+                  {card.title}
+                </h3>
+                
+                <p className={`text-lg leading-relaxed mb-6 ${
+                  theme === "dark" ? "text-gray-300" : "text-gray-600"
+                }`}>
+                  {card.description}
+                </p>
+                
+                <div className={`inline-block px-4 py-2 rounded-lg text-sm font-semibold ${
+                  theme === "dark" ? "bg-blue-900/50 text-blue-200" : "bg-blue-50 text-blue-700"
+                }`}>
+                  💡 {card.fact}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        
+      </div>
 
       {/* Stats Section */}
       {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

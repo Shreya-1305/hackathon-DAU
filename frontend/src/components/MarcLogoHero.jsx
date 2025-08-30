@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaUsers } from 'react-icons/fa';
+import { FaUsers, FaLeaf } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const MarcLogoHero = () => {
@@ -61,15 +61,11 @@ const MarcLogoHero = () => {
                 ))}
               </h1>
               
-              {/* Subtle underline animation */}
-              <div className="mt-2 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent rounded-full animate-pulse opacity-60"></div>
             </div>
             
             {/* Small leaf icon */}
             <div className="absolute -top-2 -right-2 text-emerald-500 animate-bounce" style={{animationDelay: '1s'}}>
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
-              </svg>
+              <FaLeaf className="w-6 h-6" />
             </div>
           </div>
 
